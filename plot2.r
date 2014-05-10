@@ -6,6 +6,7 @@ power <- read.csv("household_power_consumption.txt",
                   colClasses = c("character","character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"), 
                   skip=66637,
                   nrows=2880)
-png("plot1.png")
-hist(power$global_active_power, main="Global Active Power", xlab="Global Active Power (kilowattz)", col="red")
+times <- strptime(paste(power$date, power$time), "%d/%m/%Y %H:%M:%S")
+png("plot2.png")
+plot(times, power$global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 dev.off()
