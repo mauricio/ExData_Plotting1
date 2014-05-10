@@ -6,6 +6,6 @@ power <- read.csv("household_power_consumption.txt",
                   colClasses = c("character","character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"), 
                   skip=66637,
                   nrows=2880)
-png("plot1.png")
-hist(power$global_active_power, main="Global Active Power", xlab="Global Active Power (kilowattz)", col="red")
+png("plot1.png",width=504,height=504,bg="transparent")
+hist(power$global_active_power, main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red")
 dev.off()
